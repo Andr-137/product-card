@@ -1,0 +1,212 @@
+@use "../../../stl/index" as s;
+@use "../../components/showMore";
+
+
+.title {
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 150%;
+    letter-spacing: 1px;
+    text-align: center;
+    padding-top: s.apx(50, 30);
+}
+.title__h1 {
+    text-align: center;
+    font-size: s.apx(46, 26);
+    font-weight: 900;
+    margin-top: 8px;
+}
+.panel {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: s.apx(85, 20);
+}
+.panel__block {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 12px;
+}
+.item-tab {
+    position: relative;
+    color: rgba(154, 156, 165, 1);
+    padding-top: 10px;
+    padding-left: 20px;
+    padding-right: 40px;
+    padding-bottom: 10px;
+    cursor: pointer;
+}
+.active {
+    box-sizing: border-box;
+    border: 1px solid rgba(255, 63, 58, 1);
+    border-radius: 4px;
+    color: rgba(255, 63, 58, 1);
+}
+.bottom-tab {
+    font-size: s.apx(16, 14);
+    font-weight: 700;
+    line-height: 160%;
+    // padding: 10px 20px;
+}
+.quantity {
+    font-size: 10px;
+    font-weight: 900;
+    line-height: 150%;
+    position: absolute;
+    top: 9px;
+    right: 24px;
+}
+.panel__search {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 150%;
+    color: rgba(154, 156, 165, 1);
+    box-sizing: border-box;
+}
+.search-block {
+    width: s.apx(313, 200);
+    border: 1px solid rgba(215, 218, 221, 1);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 4px;
+    padding-top: 12px;
+    padding-left: 16px;
+    padding-right: 16px;
+    padding-bottom: 12px;
+}
+.search-bottom {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.product-card {
+    margin-top: s.apx(60, 49);
+}
+.product-card__block {
+    /* Ни какой ширины */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-left: -15px;
+    margin-right: -15px;
+    margin-top: -40px;
+}
+.product-card__card {
+    margin-left: 15px;
+    margin-right: 15px;
+    margin-top: 40px;
+    box-sizing: border-box;
+    border: 1px solid rgba(229, 232, 237, 1);
+    border-radius: 4px;
+    box-shadow: 0px 4px 4px -4px rgba(30, 33, 44, 0.03),0px 12px 10px -6px rgba(154, 156, 165, 0.04),0px 30px 24px -10px rgba(154, 156, 165, 0.05),0px 80px 80px -20px rgba(154, 156, 165, 0.08);
+    background: rgba(255, 255, 255, 1);
+    max-width: 390px;
+}
+.product__card-header {
+    img {
+        width: 100%;
+    }
+}
+.product__card-content {
+    padding: s.apx(24, 10);
+}
+.job {
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 150%;
+    border: 1px solid rgba(229, 232, 237, 1);
+    padding: 1px 8px;
+    color: rgba(229, 232, 237, 1);
+    border-radius: 4px;
+}
+.job-color__marketing {
+    background-color: rgb(13, 198, 158);
+}
+.job-color__management {
+    background-color: rgba(90, 135, 252, 1);
+}
+.job-color__recruting {
+    background-color: rgba(248, 152, 40, 1);
+}
+.job-color__design {
+    background-color: rgba(255, 66, 66, 1);
+}
+.job-color__development {
+    background-color: rgba(119, 114, 241, 1);
+}
+.job__discription {
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 150%;
+    color: rgba(30, 33, 44, 1);
+    margin-top: s.apx(20, 10);
+}
+.job-pice {
+    display: flex;
+    margin-top: s.apx(20, 10);
+    span {
+        padding: 0 8px;
+    }
+}
+.pice {
+    font-size: s.apx(18, 14);
+    font-weight: 700;
+    line-height: 150%;
+    color: rgba(255, 66, 66, 1);
+}
+.name {
+    color: rgba(120, 122, 128, 1);
+    font-size: s.apx(18, 14);
+    font-weight: 400;
+    line-height: 150%;
+}
+.update__block {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: s.apx(80, 40);
+    margin-bottom: s.apx(86, 40);
+    row-gap: 20px;
+}
+.update__text {
+    padding-left: 16px;
+    color: rgba(66, 69, 81, 1);
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 160%;
+}
+.icon {
+    position: absolute;
+}
+.icon-1 {
+    top: -2%;
+    right: -42%;
+    transform: rotate(-90deg);
+}
+.icon-2 {
+    top: 59%;
+    right: -40%;
+}
+.icon-3 {
+    top: 36%;
+    left: -22%;
+}
+@media screen and (max-width: 1024.98px) {
+    .panel {
+        flex-direction: column;
+    }
+    .panel__search {
+        margin-bottom: 5px;
+    }
+    .panel__block {
+        order: 1;
+        row-gap: 5px;
+    }
+}
+@media screen and (max-width: 1800.98px) {
+    .icon {
+        display: none;
+    }
+}

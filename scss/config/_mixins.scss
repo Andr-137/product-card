@@ -1,0 +1,181 @@
+@use "./_config.scss" as s;
+
+@mixin widthСanvas($canvas: $maxWidthContainer, $indent: $fields) {
+    max-width: calc($canvas + $indent * 2);
+    padding-left: $indent;
+    padding-right: $indent;
+    margin: 0px auto;
+}
+
+@mixin mediaCanvas($canvas: s.$break_lg, $indent: s.$fields) {
+    @media screen and (max-width: $canvas) {
+        max-width: calc($canvas + $indent * 2);
+        padding-left: $indent;
+        padding-right: $indent;
+        margin: 0px auto;
+    }
+}
+@mixin margin-flex($value: s.$offset_no_px / 2, $val_bottom: 0) {
+    margin-left: #{$value}px;
+    margin-right: #{$value}px;
+    @if $val_bottom == 0 {
+        
+    }@else {
+        margin-bottom: #{$val_bottom}px;
+    }
+}
+@mixin mediaMaxMin($max_width, $min_width) {
+    @media screen and (min-width: $min_width) and (max-width: $max_width) {
+        @content;
+    }
+}
+@mixin mediaMax($max-width: s.$break_lg) {
+    @media screen and (max-width: $max-width) {
+        @content;
+    }
+}
+
+@mixin mediaMin($min-width: s.$break_lg) {
+    @media screen and (min-width: $min-width) {
+        @content;
+    }
+}
+@mixin widthColumn($n) {
+    $p: $n - 1;
+    $k: $columns - 1;
+    @for $i from 1 through $columns {
+        @if $n == 1 {
+        width: calc((100% - $k * $offset) / $columns * $n);
+        }@else if $n == $i {
+        width: calc((100% - $k * $offset) / $columns * $n + ($offset * $p));
+        }
+    }
+}
+// ======================= Grid mixins =====================================
+@mixin col() {
+    box-sizing: border-box;
+    word-wrap: break-word;
+    @include col-offsets(margin);
+}
+@mixin col-offsets($type){
+    #{$type}-left: s.$offset_one_side;
+    #{$type}-right: s.$offset_one_side;
+}
+@mixin size($n){
+    $val: 100% / s.$columns * $n;
+    width: #{calc(#{$val} - #{s.$offset})};
+}
+
+@mixin size-xxlg($n){
+    $val: 100% / s.$columns * $n;
+    @include xxlg(width, #{calc(#{$val} - #{s.$offset_xxlg})});
+}
+
+@mixin size-xlg($n){
+    $val: 100% / s.$columns * $n;
+    @include xlg(width, #{calc(#{$val} - #{s.$offset_xlg})});
+}
+
+@mixin size-lg($n){
+    $val: 100% / s.$columns * $n;
+    @include lg(width, #{calc(#{$val} - #{s.$offset_lg})});
+}
+
+@mixin size-md($n){
+    $val: 100% / s.$columns * $n;
+    @include md(width, #{calc(#{$val} - #{s.$offset_md})});
+}
+
+@mixin size-sm($n){
+    $val: 100% / s.$columns * $n;
+    @include sm(width, #{calc(#{$val} - #{s.$offset_sm})});
+}
+
+@mixin size-xs($n){
+    $val: 100% / s.$columns * $n;
+    @include xs(width, #{calc(#{$val} - #{s.$offset_xs})});
+}
+
+@mixin size-xxs($n){
+    $val: 100% / s.$columns * $n;
+    @include xxs(width, #{calc(#{$val} - #{s.$offset_xxs})});
+}
+
+@mixin xxlg-block() {
+    @media screen and (max-width: $break_xxlg) {
+        @content;
+    }
+}
+
+@mixin xlg-block() {
+    @media screen and (max-width: s.$break_xlg) {
+        @content;
+    }
+}
+
+@mixin lg-block() {
+    @media screen and (max-width: s.$break_lg) {
+        @content;
+    }
+}
+
+@mixin md-block() {
+    @media screen and (max-width: s.$break_md) {
+        @content;
+    }
+}
+
+@mixin sm-block() {
+    @media screen and (max-width: s.$break_sm) {
+        @content;
+    }
+}
+
+@mixin xs-block() {
+    @media screen and (max-width: s.$break_xs) {
+        @content;
+    }
+}
+
+@mixin xxs-block() {
+    @media screen and (max-width: s.$break_xxs) {
+        @content;
+    }
+}
+
+@mixin xxlg($name, $value) {
+    @media screen and (max-width: s.$break_xxlg) {
+        #{$name}: $value;
+    }
+}
+@mixin xlg($name, $value) {
+    @media screen and (max-width: s.$break_xlg) {
+        #{$name}: $value;
+    }
+}
+@mixin lg($name, $value) {
+    @media screen and (max-width: s.$break_lg) {
+        #{$name}: $value;
+    }
+}
+@mixin md($name, $value) {
+    @media screen and (max-width: s.$break_md) {
+        #{$name}: $value;
+    }
+}
+@mixin sm($name, $value) {
+    @media screen and (max-width: s.$break_sm) {
+        #{$name}: $value;
+    }
+}
+@mixin xs($name, $value) {
+    @media screen and (max-width: s.$break_xs) {
+        #{$name}: $value;
+    }
+}
+@mixin xxs($name, $value) {
+    @media screen and (max-width: s.$break_xxs) {
+        #{$name}: $value;
+    }
+}
+

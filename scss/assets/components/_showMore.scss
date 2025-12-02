@@ -1,0 +1,52 @@
+@use "../../stl/index" as s;
+
+.simple-card {
+    width: 100%;
+    margin-top: 30px;
+}
+.simple-card__block {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-left: -10px;
+    margin-right: -10px;
+    margin-bottom: -20px;
+    // column-gap: 30px;
+    // row-gap: 40px;
+}
+.simple__card {
+    width: s.colWidth(3);
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 20px;
+    border: 2px solid #000;
+    border-radius: 8px;
+    box-sizing: border-box;
+    @include s.lg-block() {
+        width: s.colWidth(4);
+    }
+}
+.simple__card-header {
+    min-height: 200px;
+    background-color: Azure;
+    border-radius: 8px 8px 0px 0px;
+    display: grid;
+    place-items: center;
+}
+// .simple__card-title {}
+.simple__card-content {
+    min-height: 40px;
+    background-color: Beige;
+    display: grid;
+    place-items: center;
+}
+// .simple__card-text {}
+.simple__card-footer {
+    min-height: 40px;
+    background-color: LimeGreen;
+    color: #fff;
+    display: grid;
+    place-items: center;
+    font-weight: bold;
+    border-radius: 0px 0px 8px 8px;
+}

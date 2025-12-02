@@ -1,0 +1,35 @@
+@use "sass:math";
+@use "config" as *;
+
+$base: $maxWidth; // Максимальная ширина
+$minbase: $minWidth; // Минимальная ширина  
+
+@function vw($value) {
+    @return $value / $base * 100vw;
+}
+
+@function px($value) {
+    // @return $value / $base * 100vw;
+    @return calc(100vw / $base * $value);
+}
+
+@function apx($maxValue, $minValue) {
+    $min: $minValue + px;
+    $max: $maxValue + px;
+    @return clamp($min, px($maxValue), $max);
+}
+@function clampCustom($maxValue, $minValue) {
+    $min: $minValue + px;
+    $max: $maxValue + px;
+    @return clamp($min, $varAdaptiv, $max);
+}
+@function colWidth($n) {
+    // $val: 100% / $columns * $n;
+    $val: math.div(100%, $columns) * $n;
+    @return calc(#{$val} - #{$offset})
+}
+@function rems($px) {
+    $rem: "rem";
+    // @return math.div($px, 16);
+    @return math.div($px, 16) + rem;
+}

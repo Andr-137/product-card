@@ -1,0 +1,53 @@
+// Максимальная ширина полотна без пикселей
+$maxWidth: 1920;
+// Максимальная ширина полотна с пикселями
+$maxWidthScrinPX: 1920px;
+// Минимальная ширина полотна без пикселей
+$minWidth: 320;
+// Минимальная ширина полотна с пикселями
+$minWidthScrinPX: 320px;
+// Ширина рабочего полотна без пикселей
+$maxWidthContainerAdap: 1230;
+// Ширина рабочего полотна с пикселями
+$maxWidthContainer: 1230px;
+// Количество колонок в макете
+$columns: 12;
+$atom: calc(100% / $columns);
+// Отступы между колонками
+$offset: 30px;
+// Поля отступов от рабочего полотна
+$fields: 70px;
+$fields_xxlg: 70px;
+$fields_xlg: 70px;
+$fields_lg: 70px;
+$fields_md: 50px;
+$fields_sm: 30px;
+$fields_xs: 15px;
+$fields_xxs: 10px;
+
+$break_xxlg: 1500.98px;
+$break_xlg: 1366.98px;
+$break_lg: 1280.98px;
+$break_md: 1024.98px;
+$break_sm: 768.98px;
+$break_xs: 560.98px;
+$break_xxs: 390.98px;
+// Минимальный экран с отступами по краям
+$minWidthScrin: $minWidthScrinPX - $fields_xxs * 2;
+
+$offset_xxlg: $offset;
+$offset_xlg: $offset;
+$offset_lg: $offset;
+$offset_md: $offset;
+$offset_sm: $offset;
+$offset_xs: $offset;
+$offset_xxs: $offset;
+
+$offset_one_side: calc($offset / 2);
+$offset_xxlg_one_side: calc($offset_xxlg / 2);
+$offset_xlg_one_side: calc($offset_xlg / 2);
+$offset_lg_one_side: calc($offset_lg / 2);
+$offset_md_one_side: calc($offset_md / 2);
+$offset_sm_one_side: calc($offset_sm / 2);
+$offset_xs_one_side: calc($offset_xs / 2);
+$offset_xxs_one_side: calc($offset_xxs / 2);

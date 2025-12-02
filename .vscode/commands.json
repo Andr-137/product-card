@@ -1,0 +1,87 @@
+[
+  {
+    "id": "1764696345507",
+    "title": "Создать package.json",
+    "command": "npm init -y"
+  },
+  {
+    "id": "1764696412886",
+    "title": "Удалить плагин",
+    "command": "npm uninstall -D name"
+  },
+  {
+    "id": "1764696437283",
+    "title": "Установить плагин",
+    "command": "npm install name-package -D"
+  },
+  {
+    "id": "1764696466678",
+    "title": "Инициализация package.json",
+    "command": "npm install"
+  },
+  {
+    "id": "1764696504173",
+    "title": "Удалить node_modules",
+    "command": "rm -rf node_modules package-lock.json"
+  },
+  {
+    "id": "1764696547382",
+    "title": "Добавить в index",
+    "command": "git add ."
+  },
+  {
+    "id": "1764696569525",
+    "title": "Дефолтный комментарий",
+    "command": "git commit -m \"Работа с папкой hint\""
+  },
+  {
+    "id": "1764696598973",
+    "title": "К какому аккаунту поключён",
+    "command": "git remote -v"
+  },
+  {
+    "id": "1764696674964",
+    "title": "Подключиться к Andr-971/hint",
+    "command": "git remote set-url origin git@github.com-Andr-971:Andr-971/hint.git"
+  },
+  {
+    "id": "1764696711901",
+    "title": "Подключиться к Andr-137/hint",
+    "command": "git remote set-url origin git@github.com-Andr-137:Andr-137/hint.git"
+  },
+  {
+    "id": "1764696747578",
+    "title": "Отправка изменений в ветку main",
+    "command": "git push origin main"
+  },
+  {
+    "id": "1764696779149",
+    "title": "На дефолтную ветку master",
+    "command": "git push origin HEAD:master"
+  },
+  {
+    "id": "1764696805269",
+    "title": "SVG sprite",
+    "command": "cs svgsprite -d ./icons -o ./public --prefix -icon --size 24px"
+  },
+  {
+    "id": "1764696839823",
+    "title": "Инструменты pretter,eslint,ts",
+    "command": "npm install --save-dev eslint prettier eslint-config-prettier eslint-plugin-prettier @typescript-eslint/parser @typescript-eslint/eslint-plugin"
+  },
+  {
+    "id": "1764696866324",
+    "title": "Копировать прект в текст",
+    "command": "cs projecttext --ignore-dirs &quot;node_modules,dist,media,.git&quot; --ignore-files &quot;*.log,*.md,package-lock.json,LICENSE&quot;"
+  },
+  {
+    "id": "1764696892852",
+    "title": "Шрифты,создать, подключить",
+    "command": "cs fonts -d ./fonts-source -o ./dist/fonts --css-file query-fonts.css"
+  },
+  {
+    "id": "1764696916484",
+    "title": "Создать gif",
+    "command": "cs creategif -i hero-video.mp4 -o banner.gif --width 480 --fps 30 --duration 5"
+  }
+]
