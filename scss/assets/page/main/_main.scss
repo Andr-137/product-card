@@ -29,12 +29,13 @@
 }
 .item-tab {
     position: relative;
-    color: rgba(154, 156, 165, 1);
+    // color: rgba(154, 156, 165, 1);
     padding-top: 10px;
     padding-left: 20px;
     padding-right: 40px;
     padding-bottom: 10px;
     cursor: pointer;
+    // padding: 10px 20px;
 }
 .active {
     box-sizing: border-box;
@@ -42,7 +43,10 @@
     border-radius: 4px;
     color: rgba(255, 63, 58, 1);
 }
-.bottom-tab {
+.item-tab.active .button-tab {
+    color: rgba(255, 63, 58, 1);
+}
+.button-tab {
     font-size: s.apx(16, 14);
     font-weight: 700;
     line-height: 160%;
@@ -75,7 +79,7 @@
     padding-right: 16px;
     padding-bottom: 12px;
 }
-.search-bottom {
+.search-button {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -102,6 +106,13 @@
     box-shadow: 0px 4px 4px -4px rgba(30, 33, 44, 0.03),0px 12px 10px -6px rgba(154, 156, 165, 0.04),0px 30px 24px -10px rgba(154, 156, 165, 0.05),0px 80px 80px -20px rgba(154, 156, 165, 0.08);
     background: rgba(255, 255, 255, 1);
     max-width: 390px;
+    transition: all 0.3s ease-in-out;
+    
+    &:hover {
+        transform: translateY(-5px);
+        box-shadow: 0px 12px 20px -8px rgba(154, 156, 165, 0.1), 
+                    0px 40px 32px -16px rgba(154, 156, 165, 0.08);
+    }
 }
 .product__card-header {
     img {
@@ -167,7 +178,7 @@
     justify-content: center;
     align-items: center;
     margin-top: s.apx(80, 40);
-    margin-bottom: s.apx(86, 40);
+    margin-button: s.apx(86, 40);
     row-gap: 20px;
 }
 .update__text {
@@ -198,7 +209,7 @@
         flex-direction: column;
     }
     .panel__search {
-        margin-bottom: 5px;
+        margin-button: 5px;
     }
     .panel__block {
         order: 1;

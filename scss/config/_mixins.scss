@@ -178,4 +178,22 @@
         #{$name}: $value;
     }
 }
+// Add new responsive grid mixin
+@mixin responsive-grid($min-width: 280px, $gap: 30px) {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax($min-width, 1fr));
+    gap: $gap;
+    
+    @include s.sm-block() {
+        gap: calc($gap / 2);
+    }
+}
+
+// Добавить видимый миксин фокуса
+@mixin focus-visible($color: s.$secondary-red) {
+    &:focus-visible {
+        outline: 2px solid $color;
+        outline-offset: 2px;
+    }
+}
 

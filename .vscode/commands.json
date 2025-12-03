@@ -72,7 +72,7 @@
   {
     "id": "1764696866324",
     "title": "Копировать прект в текст",
-    "command": "cs projecttext --ignore-dirs &quot;node_modules,dist,media,.git&quot; --ignore-files &quot;*.log,*.md,package-lock.json,LICENSE&quot;"
+    "command": "cs projecttext --ignore-dirs &quot;node_modules,dist,media,.vscode,.git&quot; --ignore-files  &quot;*.log,*.md,package-lock.json,LICENSE&quot;"
   },
   {
     "id": "1764696892852",

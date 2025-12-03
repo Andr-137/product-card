@@ -1,0 +1,1590 @@
+// Структура проекта: product-card
+// Сгенерировано: 03.12.2025, 15:09:24
+// Команда: cs projecttext --dir "E:\TEST\TEST-JOB\Kozarev CHP\product-card" --output "E:\TEST\TEST-JOB\Kozarev CHP\product-card\project.txt"
+
+📁 СТРУКТУРА ПРОЕКТА:
+
+├── css
+│   └── style.css
+├── js
+│   └── script.js
+├── scss
+│   ├── assets
+│   │   ├── components
+│   │   │   └── _showMore.scss
+│   │   ├── footer
+│   │   │   └── _footer.scss
+│   │   ├── header
+│   │   │   └── _header.scss
+│   │   └── page
+│   │       └── main
+│   │           └── _main.scss
+│   ├── config
+│   │   ├── _config.scss
+│   │   ├── _fonts.scss
+│   │   ├── _functions.scss
+│   │   ├── _global.scss
+│   │   ├── _mixins.scss
+│   │   ├── _reset.scss
+│   │   └── _var.scss
+│   ├── stl
+│   │   └── _index.scss
+│   └── style.scss
+├── favicon.ico
+└── index.html
+
+
+📄 СОДЕРЖИМОЕ ФАЙЛОВ:
+
+
+// css\style.css
+@charset "UTF-8";
+@font-face {
+  font-family: "Lato";
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+  src: url("../fonts/lato-black.woff2") format("woff2"), url("../fonts/lato-black.woff") format("woff");
+}
+@font-face {
+  font-family: "Lato";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("../fonts/lato-bold.woff2") format("woff2"), url("../fonts/lato-bold.woff") format("woff");
+}
+@font-face {
+  font-family: "Lato";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("../fonts/lato-regular.woff2") format("woff2"), url("../fonts/lato-regular.woff") format("woff");
+}
+/* Примеры использования:
+.text-lato {
+    font-family: 'Lato', sans-serif;
+}
+*/
+:root {
+  --white255: rgb(255, 255, 255);
+  --black000: rgb(0, 0, 0);
+}
+
+body {
+  font-family: "Lato", sans-serif;
+}
+body .lock {
+  overflow-y: hidden;
+}
+
+::-webkit-scrollbar {
+  width: 12px;
+  background-color: #fff;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: #000;
+}
+
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  background-color: #f9f9fd;
+}
+
+.wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 7;
+}
+
+.main {
+  width: 100%;
+  flex: 1 1 100%;
+}
+
+.footer {
+  width: 100%;
+}
+
+.g-container {
+  width: clamp(300px, 90vw, 1230px);
+  margin: 0px auto;
+  position: relative;
+}
+
+body,
+div,
+dl,
+dt,
+dd,
+ul,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+code,
+form,
+fieldset,
+input,
+textarea,
+p,
+blockquote,
+th,
+td {
+  margin: 0;
+  padding: 0;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+fieldset,
+img,
+abbr {
+  border: 0;
+}
+
+address,
+caption,
+cite,
+code,
+dfn,
+em,
+strong,
+th,
+var {
+  font-style: normal;
+  font-weight: normal;
+}
+
+ul li {
+  list-style: none;
+}
+
+caption,
+th {
+  text-align: left;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: 100%;
+  font-weight: normal;
+}
+
+sup {
+  vertical-align: text-top;
+}
+
+sub {
+  vertical-align: text-bottom;
+}
+
+input,
+textarea,
+select {
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  border: none;
+  outline: none;
+}
+
+legend {
+  color: #000;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section,
+main {
+  display: block;
+}
+
+button {
+  background-color: #fff;
+  border: none;
+}
+
+a {
+  color: #000;
+  text-decoration-line: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.simple-card {
+  width: 100%;
+  margin-top: 30px;
+}
+
+.simple-card__block {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-left: -10px;
+  margin-right: -10px;
+  margin-bottom: -20px;
+}
+
+.simple__card {
+  width: calc(25% - 30px);
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-bottom: 20px;
+  border: 2px solid #000;
+  border-radius: 8px;
+  box-sizing: border-box;
+}
+@media screen and (max-width: 1280.98px) {
+  .simple__card {
+    width: calc(33.3333333333% - 30px);
+  }
+}
+
+.simple__card-header {
+  min-height: 200px;
+  background-color: Azure;
+  border-radius: 8px 8px 0px 0px;
+  display: grid;
+  place-items: center;
+}
+
+.simple__card-content {
+  min-height: 40px;
+  background-color: Beige;
+  display: grid;
+  place-items: center;
+}
+
+.simple__card-footer {
+  min-height: 40px;
+  background-color: LimeGreen;
+  color: #fff;
+  display: grid;
+  place-items: center;
+  font-weight: bold;
+  border-radius: 0px 0px 8px 8px;
+}
+
+.title {
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 150%;
+  letter-spacing: 1px;
+  text-align: center;
+  padding-top: clamp(30px, 2.6041666667vw, 50px);
+}
+
+.title__h1 {
+  text-align: center;
+  font-size: clamp(26px, 2.3958333333vw, 46px);
+  font-weight: 900;
+  margin-top: 8px;
+}
+
+.panel {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: clamp(20px, 4.4270833333vw, 85px);
+}
+
+.panel__block {
+  display: flex;
+  flex-wrap: wrap;
+  -moz-column-gap: 12px;
+       column-gap: 12px;
+}
+
+.item-tab {
+  position: relative;
+  color: rgb(154, 156, 165);
+  padding-top: 10px;
+  padding-left: 20px;
+  padding-right: 40px;
+  padding-bottom: 10px;
+  cursor: pointer;
+}
+
+.active {
+  box-sizing: border-box;
+  border: 1px solid rgb(255, 63, 58);
+  border-radius: 4px;
+  color: rgb(255, 63, 58);
+}
+
+.bottom-tab {
+  font-size: clamp(14px, 0.8333333333vw, 16px);
+  font-weight: 700;
+  line-height: 160%;
+}
+
+.quantity {
+  font-size: 10px;
+  font-weight: 900;
+  line-height: 150%;
+  position: absolute;
+  top: 9px;
+  right: 24px;
+}
+
+.panel__search {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 150%;
+  color: rgb(154, 156, 165);
+  box-sizing: border-box;
+}
+
+.search-block {
+  width: clamp(200px, 16.3020833333vw, 313px);
+  border: 1px solid rgb(215, 218, 221);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 4px;
+  padding-top: 12px;
+  padding-left: 16px;
+  padding-right: 16px;
+  padding-bottom: 12px;
+}
+
+.search-bottom {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.product-card {
+  margin-top: clamp(49px, 3.125vw, 60px);
+}
+
+.product-card__block {
+  /* Ни какой ширины */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-left: -15px;
+  margin-right: -15px;
+  margin-top: -40px;
+}
+
+.product-card__card {
+  margin-left: 15px;
+  margin-right: 15px;
+  margin-top: 40px;
+  box-sizing: border-box;
+  border: 1px solid rgb(229, 232, 237);
+  border-radius: 4px;
+  box-shadow: 0px 4px 4px -4px rgba(30, 33, 44, 0.03), 0px 12px 10px -6px rgba(154, 156, 165, 0.04), 0px 30px 24px -10px rgba(154, 156, 165, 0.05), 0px 80px 80px -20px rgba(154, 156, 165, 0.08);
+  background: rgb(255, 255, 255);
+  max-width: 390px;
+}
+
+.product__card-header img {
+  width: 100%;
+}
+
+.product__card-content {
+  padding: clamp(10px, 1.25vw, 24px);
+}
+
+.job {
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 150%;
+  border: 1px solid rgb(229, 232, 237);
+  padding: 1px 8px;
+  color: rgb(229, 232, 237);
+  border-radius: 4px;
+}
+
+.job-color__marketing {
+  background-color: rgb(13, 198, 158);
+}
+
+.job-color__management {
+  background-color: rgb(90, 135, 252);
+}
+
+.job-color__recruting {
+  background-color: rgb(248, 152, 40);
+}
+
+.job-color__design {
+  background-color: rgb(255, 66, 66);
+}
+
+.job-color__development {
+  background-color: rgb(119, 114, 241);
+}
+
+.job__discription {
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 150%;
+  color: rgb(30, 33, 44);
+  margin-top: clamp(10px, 1.0416666667vw, 20px);
+}
+
+.job-pice {
+  display: flex;
+  margin-top: clamp(10px, 1.0416666667vw, 20px);
+}
+.job-pice span {
+  padding: 0 8px;
+}
+
+.pice {
+  font-size: clamp(14px, 0.9375vw, 18px);
+  font-weight: 700;
+  line-height: 150%;
+  color: rgb(255, 66, 66);
+}
+
+.name {
+  color: rgb(120, 122, 128);
+  font-size: clamp(14px, 0.9375vw, 18px);
+  font-weight: 400;
+  line-height: 150%;
+}
+
+.update__block {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: clamp(40px, 4.1666666667vw, 80px);
+  margin-bottom: clamp(40px, 4.4791666667vw, 86px);
+  row-gap: 20px;
+}
+
+.update__text {
+  padding-left: 16px;
+  color: rgb(66, 69, 81);
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 160%;
+}
+
+.icon {
+  position: absolute;
+}
+
+.icon-1 {
+  top: -2%;
+  right: -42%;
+  transform: rotate(-90deg);
+}
+
+.icon-2 {
+  top: 59%;
+  right: -40%;
+}
+
+.icon-3 {
+  top: 36%;
+  left: -22%;
+}
+
+@media screen and (max-width: 1024.98px) {
+  .panel {
+    flex-direction: column;
+  }
+  .panel__search {
+    margin-bottom: 5px;
+  }
+  .panel__block {
+    order: 1;
+    row-gap: 5px;
+  }
+}
+@media screen and (max-width: 1800.98px) {
+  .icon {
+    display: none;
+  }
+}
+.footer {
+  color: #fff;
+}/*# sourceMappingURL=style.css.map */
+
+// js\script.js
+document.addEventListener('DOMContentLoaded', function () {
+    const tabs = document.querySelectorAll('.item-tab');
+
+    if (tabs.length > 0) {
+        tabs[0].classList.add('active');
+    }
+
+    tabs.forEach(tab => {
+        tab.addEventListener('click', function () {
+            tabs.forEach(t => t.classList.remove('active'));
+            this.classList.add('active');
+        });
+    });
+});
+
+
+
+
+// scss\assets\components\_showMore.scss
+@use "../../stl/index" as s;
+
+.simple-card {
+    width: 100%;
+    margin-top: 30px;
+}
+.simple-card__block {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-left: -10px;
+    margin-right: -10px;
+    margin-bottom: -20px;
+    // column-gap: 30px;
+    // row-gap: 40px;
+}
+.simple__card {
+    width: s.colWidth(3);
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 20px;
+    border: 2px solid #000;
+    border-radius: 8px;
+    box-sizing: border-box;
+    @include s.lg-block() {
+        width: s.colWidth(4);
+    }
+}
+.simple__card-header {
+    min-height: 200px;
+    background-color: Azure;
+    border-radius: 8px 8px 0px 0px;
+    display: grid;
+    place-items: center;
+}
+// .simple__card-title {}
+.simple__card-content {
+    min-height: 40px;
+    background-color: Beige;
+    display: grid;
+    place-items: center;
+}
+// .simple__card-text {}
+.simple__card-footer {
+    min-height: 40px;
+    background-color: LimeGreen;
+    color: #fff;
+    display: grid;
+    place-items: center;
+    font-weight: bold;
+    border-radius: 0px 0px 8px 8px;
+}
+
+// scss\assets\footer\_footer.scss
+@use "../../stl/" as s;
+
+
+// scss\assets\header\_header.scss
+@use "../../stl/index" as s;
+
+
+
+// scss\assets\page\main\_main.scss
+@use "../../../stl/index" as s;
+@use "../../components/showMore";
+
+
+.title {
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 150%;
+    letter-spacing: 1px;
+    text-align: center;
+    padding-top: s.apx(50, 30);
+}
+.title__h1 {
+    text-align: center;
+    font-size: s.apx(46, 26);
+    font-weight: 900;
+    margin-top: 8px;
+}
+.panel {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: s.apx(85, 20);
+}
+.panel__block {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 12px;
+}
+.item-tab {
+    position: relative;
+    color: rgba(154, 156, 165, 1);
+    padding-top: 10px;
+    padding-left: 20px;
+    padding-right: 40px;
+    padding-bottom: 10px;
+    cursor: pointer;
+}
+.active {
+    box-sizing: border-box;
+    border: 1px solid rgba(255, 63, 58, 1);
+    border-radius: 4px;
+    color: rgba(255, 63, 58, 1);
+}
+.bottom-tab {
+    font-size: s.apx(16, 14);
+    font-weight: 700;
+    line-height: 160%;
+    // padding: 10px 20px;
+}
+.quantity {
+    font-size: 10px;
+    font-weight: 900;
+    line-height: 150%;
+    position: absolute;
+    top: 9px;
+    right: 24px;
+}
+.panel__search {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 150%;
+    color: rgba(154, 156, 165, 1);
+    box-sizing: border-box;
+}
+.search-block {
+    width: s.apx(313, 200);
+    border: 1px solid rgba(215, 218, 221, 1);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 4px;
+    padding-top: 12px;
+    padding-left: 16px;
+    padding-right: 16px;
+    padding-bottom: 12px;
+}
+.search-bottom {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.product-card {
+    margin-top: s.apx(60, 49);
+}
+.product-card__block {
+    /* Ни какой ширины */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-left: -15px;
+    margin-right: -15px;
+    margin-top: -40px;
+}
+.product-card__card {
+    margin-left: 15px;
+    margin-right: 15px;
+    margin-top: 40px;
+    box-sizing: border-box;
+    border: 1px solid rgba(229, 232, 237, 1);
+    border-radius: 4px;
+    box-shadow: 0px 4px 4px -4px rgba(30, 33, 44, 0.03),0px 12px 10px -6px rgba(154, 156, 165, 0.04),0px 30px 24px -10px rgba(154, 156, 165, 0.05),0px 80px 80px -20px rgba(154, 156, 165, 0.08);
+    background: rgba(255, 255, 255, 1);
+    max-width: 390px;
+}
+.product__card-header {
+    img {
+        width: 100%;
+    }
+}
+.product__card-content {
+    padding: s.apx(24, 10);
+}
+.job {
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 150%;
+    border: 1px solid rgba(229, 232, 237, 1);
+    padding: 1px 8px;
+    color: rgba(229, 232, 237, 1);
+    border-radius: 4px;
+}
+.job-color__marketing {
+    background-color: rgb(13, 198, 158);
+}
+.job-color__management {
+    background-color: rgba(90, 135, 252, 1);
+}
+.job-color__recruting {
+    background-color: rgba(248, 152, 40, 1);
+}
+.job-color__design {
+    background-color: rgba(255, 66, 66, 1);
+}
+.job-color__development {
+    background-color: rgba(119, 114, 241, 1);
+}
+.job__discription {
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 150%;
+    color: rgba(30, 33, 44, 1);
+    margin-top: s.apx(20, 10);
+}
+.job-pice {
+    display: flex;
+    margin-top: s.apx(20, 10);
+    span {
+        padding: 0 8px;
+    }
+}
+.pice {
+    font-size: s.apx(18, 14);
+    font-weight: 700;
+    line-height: 150%;
+    color: rgba(255, 66, 66, 1);
+}
+.name {
+    color: rgba(120, 122, 128, 1);
+    font-size: s.apx(18, 14);
+    font-weight: 400;
+    line-height: 150%;
+}
+.update__block {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: s.apx(80, 40);
+    margin-bottom: s.apx(86, 40);
+    row-gap: 20px;
+}
+.update__text {
+    padding-left: 16px;
+    color: rgba(66, 69, 81, 1);
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 160%;
+}
+.icon {
+    position: absolute;
+}
+.icon-1 {
+    top: -2%;
+    right: -42%;
+    transform: rotate(-90deg);
+}
+.icon-2 {
+    top: 59%;
+    right: -40%;
+}
+.icon-3 {
+    top: 36%;
+    left: -22%;
+}
+@media screen and (max-width: 1024.98px) {
+    .panel {
+        flex-direction: column;
+    }
+    .panel__search {
+        margin-bottom: 5px;
+    }
+    .panel__block {
+        order: 1;
+        row-gap: 5px;
+    }
+}
+@media screen and (max-width: 1800.98px) {
+    .icon {
+        display: none;
+    }
+}
+
+
+// scss\config\_config.scss
+// Максимальная ширина полотна без пикселей
+$maxWidth: 1920;
+// Максимальная ширина полотна с пикселями
+$maxWidthScrinPX: 1920px;
+// Минимальная ширина полотна без пикселей
+$minWidth: 320;
+// Минимальная ширина полотна с пикселями
+$minWidthScrinPX: 320px;
+// Ширина рабочего полотна без пикселей
+$maxWidthContainerAdap: 1230;
+// Ширина рабочего полотна с пикселями
+$maxWidthContainer: 1230px;
+// Количество колонок в макете
+$columns: 12;
+$atom: calc(100% / $columns);
+// Отступы между колонками
+$offset: 30px;
+// Поля отступов от рабочего полотна
+$fields: 70px;
+$fields_xxlg: 70px;
+$fields_xlg: 70px;
+$fields_lg: 70px;
+$fields_md: 50px;
+$fields_sm: 30px;
+$fields_xs: 15px;
+$fields_xxs: 10px;
+
+$break_xxlg: 1500.98px;
+$break_xlg: 1366.98px;
+$break_lg: 1280.98px;
+$break_md: 1024.98px;
+$break_sm: 768.98px;
+$break_xs: 560.98px;
+$break_xxs: 390.98px;
+// Минимальный экран с отступами по краям
+$minWidthScrin: $minWidthScrinPX - $fields_xxs * 2;
+
+$offset_xxlg: $offset;
+$offset_xlg: $offset;
+$offset_lg: $offset;
+$offset_md: $offset;
+$offset_sm: $offset;
+$offset_xs: $offset;
+$offset_xxs: $offset;
+
+$offset_one_side: calc($offset / 2);
+$offset_xxlg_one_side: calc($offset_xxlg / 2);
+$offset_xlg_one_side: calc($offset_xlg / 2);
+$offset_lg_one_side: calc($offset_lg / 2);
+$offset_md_one_side: calc($offset_md / 2);
+$offset_sm_one_side: calc($offset_sm / 2);
+$offset_xs_one_side: calc($offset_xs / 2);
+$offset_xxs_one_side: calc($offset_xxs / 2);
+
+
+// scss\config\_fonts.scss
+
+
+@font-face {
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 900;
+    font-display: swap;
+    src: url('../fonts/lato-black.woff2') format('woff2'),
+        url('../fonts/lato-black.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url('../fonts/lato-bold.woff2') format('woff2'),
+        url('../fonts/lato-bold.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url('../fonts/lato-regular.woff2') format('woff2'),
+        url('../fonts/lato-regular.woff') format('woff');
+}
+
+
+// scss\config\_functions.scss
+@use "sass:math";
+@use "config" as *;
+
+$base: $maxWidth; // Максимальная ширина
+$minbase: $minWidth; // Минимальная ширина  
+
+@function vw($value) {
+    @return $value / $base * 100vw;
+}
+
+@function px($value) {
+    // @return $value / $base * 100vw;
+    @return calc(100vw / $base * $value);
+}
+
+@function apx($maxValue, $minValue) {
+    $min: $minValue + px;
+    $max: $maxValue + px;
+    @return clamp($min, px($maxValue), $max);
+}
+@function clampCustom($maxValue, $minValue) {
+    $min: $minValue + px;
+    $max: $maxValue + px;
+    @return clamp($min, $varAdaptiv, $max);
+}
+@function colWidth($n) {
+    // $val: 100% / $columns * $n;
+    $val: math.div(100%, $columns) * $n;
+    @return calc(#{$val} - #{$offset})
+}
+@function rems($px) {
+    $rem: "rem";
+    // @return math.div($px, 16);
+    @return math.div($px, 16) + rem;
+}
+
+// scss\config\_global.scss
+@use "./config" as *;
+@use "./var" as *;
+@use "./mixins" as *;
+
+body {
+    // box-sizing: border-box;
+    font-family: 'Lato', sans-serif;
+    .lock {
+        overflow-y: hidden;
+    }
+}
+
+::-webkit-scrollbar {
+    width: 12px;
+    background-color: #fff;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-color: #000;
+}
+
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 6px rgba(#000, 20%);
+    border-radius: 10px;
+    background-color: #f9f9fd;
+}
+.wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+.header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 7;
+}
+.main {
+    // margin-top: $heightHeader;
+    width: 100%;
+    flex: 1 1 100%;
+}
+
+.footer {
+    width: 100%;
+    // margin-top: auto;
+}
+
+.g-container {
+    // box-sizing: border-box;
+    width: clamp($minWidthScrin, 90vw, $maxWidthContainer); // Резиновое полотно рабочей области
+    margin: 0px auto;
+    position: relative;
+    // @include widthСanvas(); // Штрина полотна + выравнивание по середине + отступы справа слева
+    // @include mediaCanvas($break_xxlg, $fields_xxlg);// Штрина полотна + выравнивание по середине + отступы справа слева
+    // @include mediaCanvas($break_xlg, $fields_xlg);// Штрина полотна + выравнивание по середине + отступы справа слева
+    // @include mediaCanvas($break_lg, $fields_lg);// Штрина полотна + выравнивание по середине + отступы справа слева
+    // @include mediaCanvas($break_md, $fields_md);// Штрина полотна + выравнивание по середине + отступы справа слева
+    // @include mediaCanvas($break_sm, $fields_sm);// Штрина полотна + выравнивание по середине + отступы справа слева
+    // @include mediaCanvas($break_xs, $fields_xs);// Штрина полотна + выравнивание по середине + отступы справа слева
+}
+
+
+
+// scss\config\_mixins.scss
+@use "./_config.scss" as s;
+
+@mixin widthСanvas($canvas: $maxWidthContainer, $indent: $fields) {
+    max-width: calc($canvas + $indent * 2);
+    padding-left: $indent;
+    padding-right: $indent;
+    margin: 0px auto;
+}
+
+@mixin mediaCanvas($canvas: s.$break_lg, $indent: s.$fields) {
+    @media screen and (max-width: $canvas) {
+        max-width: calc($canvas + $indent * 2);
+        padding-left: $indent;
+        padding-right: $indent;
+        margin: 0px auto;
+    }
+}
+@mixin margin-flex($value: s.$offset_no_px / 2, $val_bottom: 0) {
+    margin-left: #{$value}px;
+    margin-right: #{$value}px;
+    @if $val_bottom == 0 {
+        
+    }@else {
+        margin-bottom: #{$val_bottom}px;
+    }
+}
+@mixin mediaMaxMin($max_width, $min_width) {
+    @media screen and (min-width: $min_width) and (max-width: $max_width) {
+        @content;
+    }
+}
+@mixin mediaMax($max-width: s.$break_lg) {
+    @media screen and (max-width: $max-width) {
+        @content;
+    }
+}
+
+@mixin mediaMin($min-width: s.$break_lg) {
+    @media screen and (min-width: $min-width) {
+        @content;
+    }
+}
+@mixin widthColumn($n) {
+    $p: $n - 1;
+    $k: $columns - 1;
+    @for $i from 1 through $columns {
+        @if $n == 1 {
+        width: calc((100% - $k * $offset) / $columns * $n);
+        }@else if $n == $i {
+        width: calc((100% - $k * $offset) / $columns * $n + ($offset * $p));
+        }
+    }
+}
+// ======================= Grid mixins =====================================
+@mixin col() {
+    box-sizing: border-box;
+    word-wrap: break-word;
+    @include col-offsets(margin);
+}
+@mixin col-offsets($type){
+    #{$type}-left: s.$offset_one_side;
+    #{$type}-right: s.$offset_one_side;
+}
+@mixin size($n){
+    $val: 100% / s.$columns * $n;
+    width: #{calc(#{$val} - #{s.$offset})};
+}
+
+@mixin size-xxlg($n){
+    $val: 100% / s.$columns * $n;
+    @include xxlg(width, #{calc(#{$val} - #{s.$offset_xxlg})});
+}
+
+@mixin size-xlg($n){
+    $val: 100% / s.$columns * $n;
+    @include xlg(width, #{calc(#{$val} - #{s.$offset_xlg})});
+}
+
+@mixin size-lg($n){
+    $val: 100% / s.$columns * $n;
+    @include lg(width, #{calc(#{$val} - #{s.$offset_lg})});
+}
+
+@mixin size-md($n){
+    $val: 100% / s.$columns * $n;
+    @include md(width, #{calc(#{$val} - #{s.$offset_md})});
+}
+
+@mixin size-sm($n){
+    $val: 100% / s.$columns * $n;
+    @include sm(width, #{calc(#{$val} - #{s.$offset_sm})});
+}
+
+@mixin size-xs($n){
+    $val: 100% / s.$columns * $n;
+    @include xs(width, #{calc(#{$val} - #{s.$offset_xs})});
+}
+
+@mixin size-xxs($n){
+    $val: 100% / s.$columns * $n;
+    @include xxs(width, #{calc(#{$val} - #{s.$offset_xxs})});
+}
+
+@mixin xxlg-block() {
+    @media screen and (max-width: $break_xxlg) {
+        @content;
+    }
+}
+
+@mixin xlg-block() {
+    @media screen and (max-width: s.$break_xlg) {
+        @content;
+    }
+}
+
+@mixin lg-block() {
+    @media screen and (max-width: s.$break_lg) {
+        @content;
+    }
+}
+
+@mixin md-block() {
+    @media screen and (max-width: s.$break_md) {
+        @content;
+    }
+}
+
+@mixin sm-block() {
+    @media screen and (max-width: s.$break_sm) {
+        @content;
+    }
+}
+
+@mixin xs-block() {
+    @media screen and (max-width: s.$break_xs) {
+        @content;
+    }
+}
+
+@mixin xxs-block() {
+    @media screen and (max-width: s.$break_xxs) {
+        @content;
+    }
+}
+
+@mixin xxlg($name, $value) {
+    @media screen and (max-width: s.$break_xxlg) {
+        #{$name}: $value;
+    }
+}
+@mixin xlg($name, $value) {
+    @media screen and (max-width: s.$break_xlg) {
+        #{$name}: $value;
+    }
+}
+@mixin lg($name, $value) {
+    @media screen and (max-width: s.$break_lg) {
+        #{$name}: $value;
+    }
+}
+@mixin md($name, $value) {
+    @media screen and (max-width: s.$break_md) {
+        #{$name}: $value;
+    }
+}
+@mixin sm($name, $value) {
+    @media screen and (max-width: s.$break_sm) {
+        #{$name}: $value;
+    }
+}
+@mixin xs($name, $value) {
+    @media screen and (max-width: s.$break_xs) {
+        #{$name}: $value;
+    }
+}
+@mixin xxs($name, $value) {
+    @media screen and (max-width: s.$break_xxs) {
+        #{$name}: $value;
+    }
+}
+
+
+
+// scss\config\_reset.scss
+
+    body,
+    div,
+    dl,
+    dt,
+    dd,
+    ul,
+    li,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    pre,
+    code,
+    form,
+    fieldset,
+    input,
+    textarea,
+    p,
+    blockquote,
+    th,
+    td {
+        margin: 0;
+        padding: 0;
+    }
+
+    table {
+        border-collapse: collapse;
+        border-spacing: 0;
+    }
+
+    fieldset,
+    img,
+    abbr {
+        border: 0;
+    }
+
+    address,
+    caption,
+    cite,
+    code,
+    dfn,
+    em,
+    strong,
+    th,
+    var {
+        font-style: normal;
+        font-weight: normal;
+    }
+
+    ul li {
+        list-style: none;
+    }
+
+    caption,
+    th {
+        text-align: left;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-size: 100%;
+        font-weight: normal;
+    }
+
+    sup {
+        vertical-align: text-top;
+    }
+
+    sub {
+        vertical-align: text-bottom;
+    }
+
+    input,
+    textarea,
+    select {
+        font-family: inherit;
+        font-size: inherit;
+        font-weight: inherit;
+        border: none;
+        outline: none;
+    }
+
+    legend {
+        color: #000;
+    }
+
+    article,
+    aside,
+    details,
+    figcaption,
+    figure,
+    footer,
+    header,
+    hgroup,
+    menu,
+    nav,
+    section,
+    main {
+        display: block;
+    }
+    button {
+        background-color: #fff;
+        border: none;
+    }
+    a {
+        color: #000;
+        text-decoration-line: none;
+    }
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+
+
+// scss\config\_var.scss
+// @use "./config";
+
+:root {
+    --white255: rgb(255, 255, 255);
+    --black000: rgb(0, 0, 0);
+}
+$varAdaptiv: 90vw;
+$heightHeader: 80px;
+
+
+
+
+
+
+
+// scss\stl\_index.scss
+@forward "../config/config";
+@forward "../config/fonts";
+@forward "../config/functions";
+@forward "../config/global";
+@forward "../config/mixins";
+@forward "../config/reset";
+@forward "../config/var"
+
+// scss\style.scss
+@use "./stl/index" as s;
+@use "./assets/header/_header";
+@use "./assets/page/main/_main";
+@use "./assets/footer/_footer";
+
+
+
+
+
+
+// favicon.ico
+         h     (                                      �� �� �� �� �� �� �� �� �� �� �� �� �� �� �� �� �� �� �� �� �� �� �� �� �� �� �� �� �� �� �� �� �� �� �� �� �� �� �� �� �� �� �� �� �� �� �� �� �� �� �� �� �� �� �� �� �� �� �� �� �� �� �� �� �� �� �� �� �� �� �� �� �� �� �� �� �� �� �� ��� �� �� �� �� �� �� �� �� �� �� �� �� �� �� �� �� �� �� �� �� �� �� �� �� �� �� �� �� �� �� �� �� �� �� �� �� �� �� �� �� �� �� �� �� �� �� �� �� �� �� �� �� �� �� �� �� �� �� �� �� �� �� �� �� �� �� �� �� �� �� �� �� �� �� �� �� �� �� �� �� �� �� �� �� �� �� �� �� �� �� �� �� �� �� �� ���������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������                                                                
+
+// index.html
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="./js/script.js" defer="defer"></script>
+    <title>Стартовый шаблон</title>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="g-container">
+            <div class="title">Enjoy your studying!</div>
+            <div class="title__h1">Our online courses</div>
+            <div class="panel">
+                <div class="panel__block">
+                    <div class="item-tab">
+                        <botton class="botton-tab">All</botton>
+                        <div class="quantity">17</div>
+                    </div>
+                    <div class="item-tab">
+                        <botton class="botton-tab">Marketing</botton>
+                        <div class="quantity">4</div>
+                    </div>
+                    <div class="item-tab">
+                        <botton class="botton-tab">Management</botton>
+                        <div class="quantity">3</div>
+                    </div>
+                    <div class="item-tab">
+                        <botton class="botton-tab">HR & Recruting</botton>
+                        <div class="quantity">5</div>
+                    </div>
+                    <div class="item-tab">
+                        <botton class="botton-tab">Design</botton>
+                        <div class="quantity">2</div>
+                    </div>
+                    <div class="item-tab">
+                        <botton class="botton-tab">Development</botton>
+                        <div class="quantity">3</div>
+                    </div>
+                </div>
+                <div class="panel__search">
+                    <div class="search-block">
+                        <input type="text" name="search" placeholder="Search course...">
+                        <div class="search-botton">
+                            <svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"
+                                xmlns:xlink="http://www.w3.org/1999/xlink" width="16.000000" height="16.000000"
+                                fill="none">
+                                <rect id="search" width="16.000000" height="16.000000" x="0.000000" y="0.000000" />
+                                <path id="Vector (Stroke)"
+                                    d="M7.25016 2.16634C4.44272 2.16634 2.16683 4.44223 2.16683 7.24967C2.16683 10.0571 4.44272 12.333 7.25016 12.333C8.65276 12.333 9.92161 11.7658 10.842 10.8467C11.7642 9.92589 12.3335 8.6549 12.3335 7.24967C12.3335 4.44223 10.0576 2.16634 7.25016 2.16634ZM0.833496 7.24967C0.833496 3.70585 3.70634 0.833008 7.25016 0.833008C10.794 0.833008 13.6668 3.70585 13.6668 7.24967C13.6668 8.78248 13.1287 10.1905 12.2321 11.2939L14.9711 14.0278C15.2317 14.2879 15.2321 14.7101 14.972 14.9706C14.7119 15.2312 14.2898 15.2316 14.0292 14.9715L11.2888 12.2362C10.1863 13.13 8.78039 13.6663 7.25016 13.6663C3.70634 13.6663 0.833496 10.7935 0.833496 7.24967Z"
+                                    fill="rgb(153.708,156.453,164.688)" fill-rule="evenodd" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-card__block">
+                    <div class="product-card__card">
+                        <div class="product__card-header">
+                            <img src="./img/png_jpg/img-1.jpg" alt="photo">
+                        </div>
+                        <div class="product__card-content">
+                            <div class="job job-color__marketing">Marketing</div>
+                            <div class="job__discription">The Ultimate Google Ads Training Course</div>
+                            <div class="job-pice">
+                                <div class="pice">$100</div>
+                                <span>|</span>
+                                <div class="name">by Jerome Bell</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-card__card">
+                        <div class="product__card-header">
+                            <img src="./img/png_jpg/img-2.jpg" alt="photo">
+                        </div>
+                        <div class="product__card-content">
+                            <div class="job job-color__management">Management</div>
+                            <div class="job__discription">Prduct Management Fundamentals</div>
+                            <div class="job-pice">
+                                <div class="pice">$480</div>
+                                <span>|</span>
+                                <div class="name">by Marvin McKinney</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-card__card">
+                        <div class="product__card-header">
+                            <img src="./img/png_jpg/img-3.jpg" alt="photo">
+                        </div>
+                        <div class="product__card-content">
+                            <div class="job job-color__recruting">HR & Recruting</div>
+                            <div class="job__discription">HR  Management and Analytics</div>
+                            <div class="job-pice">
+                                <div class="pice">$200</div>
+                                <span>|</span>
+                                <div class="name">by Leslie Alexander Li</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-card__card">
+                        <div class="product__card-header">
+                            <img src="./img/png_jpg/img-4.jpg" alt="photo">
+                        </div>
+                        <div class="product__card-content">
+                            <div class="job job-color__marketing">Marketing</div>
+                            <div class="job__discription">Brand Management & PR Communications</div>
+                            <div class="job-pice">
+                                <div class="pice">$530</div>
+                                <span>|</span>
+                                <div class="name">by Kristin Watson</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-card__card">
+                        <div class="product__card-header">
+                            <img src="./img/png_jpg/img-5.jpg" alt="photo">
+                        </div>
+                        <div class="product__card-content">
+                            <div class="job job-color__design">Design</div>
+                            <div class="job__discription">Graphic Design Basic</div>
+                            <div class="job-pice">
+                                <div class="pice">$500</div>
+                                <span>|</span>
+                                <div class="name">by Guy Hawkins</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-card__card">
+                        <div class="product__card-header">
+                            <img src="./img/png_jpg/img-6.jpg" alt="photo">
+                        </div>
+                        <div class="product__card-content">
+                            <div class="job job-color__management">Management</div>
+                            <div class="job__discription">Business Development Management</div>
+                            <div class="job-pice">
+                                <div class="pice">$400</div>
+                                <span>|</span>
+                                <div class="name">by Dianne Russell</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-card__card">
+                        <div class="product__card-header">
+                            <img src="./img/png_jpg/img-7.jpg" alt="photo">
+                        </div>
+                        <div class="product__card-content">
+                            <div class="job job-color__development">Development</div>
+                            <div class="job__discription">Highload Software Architecture</div>
+                            <div class="job-pice">
+                                <div class="pice">$600</div>
+                                <span>|</span>
+                                <div class="name">by Brooklyn Simmons</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-card__card">
+                        <div class="product__card-header">
+                            <img src="./img/png_jpg/img-8.jpg" alt="photo">
+                        </div>
+                        <div class="product__card-content">
+                            <div class="job job-color__recruting">HR & Recruting</div>
+                            <div class="job__discription">Human Resources – Selection and Recruitment</div>
+                            <div class="job-pice">
+                                <div class="pice">$150</div>
+                                <span>|</span>
+                                <div class="name">by Kathryn Murphy</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-card__card">
+                        <div class="product__card-header">
+                            <img src="./img/png_jpg/img-9.jpg" alt="photo">
+                        </div>
+                        <div class="product__card-content">
+                            <div class="job job-color__design">Design</div>
+                            <div class="job__discription">User Experience. Human-centered Design</div>
+                            <div class="job-pice">
+                                <div class="pice">$240</div>
+                                <span>|</span>
+                                <div class="name">by Cody Fisher</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="update__block">
+                <svg viewBox="0 0 21.7983 20" xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink" width="21.798340" height="20.000000" fill="none"
+                    customFrame="#000000">
+                    <path
+                        d="M1 0C1.55228 0 2 0.447715 2 1L2 5.43632C3.65803 2.20928 7.01998 0 10.9 0C15.2556 0 18.9584 2.78413 20.3307 6.66675C20.5147 7.18747 20.2418 7.75879 19.7211 7.94284C19.2004 8.12689 18.6291 7.85396 18.445 7.33325C17.3463 4.22472 14.3817 2 10.9 2C7.93996 2 5.35365 3.60799 3.96994 6L6.99996 6C7.55225 6 7.99996 6.44772 7.99996 7C7.99996 7.55228 7.55225 8 6.99996 8L1 8C0.447715 8 0 7.55228 0 7L0 1C0 0.447715 0.447715 0 1 0ZM3.35312 12.6668C3.16907 12.146 2.59775 11.8731 2.07703 12.0572C1.55632 12.2412 1.28339 12.8125 1.46744 13.3332C2.83975 17.2159 6.54254 20 10.8982 20C14.7782 20 18.1401 17.7907 19.7981 14.5637L19.7981 19C19.7981 19.5523 20.2459 20 20.7981 20C21.3504 20 21.7981 19.5523 21.7981 19L21.7981 13C21.7981 12.4477 21.3504 12 20.7981 12L14.7982 12C14.2459 12 13.7982 12.4477 13.7982 13C13.7982 13.5523 14.2459 14 14.7982 14L17.8282 14C16.4445 16.392 13.8582 18 10.8982 18C7.41647 18 4.45183 15.7753 3.35312 12.6668Z"
+                        fill="rgb(65.6094,68.8538,80.75)" fill-rule="evenodd" />
+                </svg>
+                <div class="update__text">Load more</div>
+            </div>
+            <svg class="icon icon-1">
+                <use href="./img/svg/img-1.svg"></use>
+            </svg>
+            <svg class="icon icon-2">
+                <use href="./img/svg/img-2.svg"></use>
+            </svg>
+            <svg class="icon icon-3">
+                <use href="./img/svg/img-3.svg"></use>
+            </svg>
+        </div>
+    </div>
+</body>
+
+</html>
